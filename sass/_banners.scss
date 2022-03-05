@@ -1,0 +1,62 @@
+.main-header {
+    padding: 2rem 0;
+    text-align: center;
+    color: dodgerblue;
+    h1 {
+        font-size: 3em;
+        letter-spacing: .25rem;
+        span {
+            color: yellow;
+        }
+    }
+}
+.subHeader {
+    padding-top: 1em;
+    font-size: 1.25em;
+    font-weight: 600;
+    color: var(--black);
+}
+.intro {
+    margin: auto;
+    padding-top: 1em;
+    width: 90%;
+    max-width: 1200px;
+    margin-bottom: 4em;
+    h2 {
+        letter-spacing: .3rem;
+        font-size: 2em;
+        a {
+            color: yellow;
+            text-shadow: 0px 0px 2px black;
+        }
+    }
+    p {
+        font-size: 1.2em;
+    }
+}
+.credit {
+    margin: auto;
+    padding-top: 1em;
+    width: 90%;
+    p {
+        text-align: center;
+        margin-bottom: .5em;
+        padding-bottom: 0;
+        letter-spacing: .3rem;
+        font-size: 2em;
+        a {
+            text-decoration: none;
+        }
+    }
+    a {
+        display: block;
+        text-align: center;
+    }
+    p {
+        a:hover {
+            color: yellow;
+            text-shadow: 0px 0px 2px black;
+            transform: scale(1.2);
+        }
+    }
+}

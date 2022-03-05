@@ -1,0 +1,53 @@
+.main-navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    min-width: 215px;
+    height: 99vh;
+    overflow: auto;
+    background-color: black;
+    border: 1px solid black;
+    font-family: "Roboto";
+    h2 {
+        margin: 0;
+        padding: .5rem 0;
+        text-align: center;
+        color: var(--black);
+        background-color: dodgerblue;
+        border-bottom: 1px solid black;
+        span {
+            color: var(--jsThemeClr);
+        }
+    }
+    ul{
+        padding-left: 0;
+        li {
+            display: flex;
+            align-items: center;
+            //background-color: rgb(30, 144, 255, .5);
+            border-bottom: 1px solid dodgerblue;
+            margin-bottom: 0;
+            a {
+                padding: .75em .5em;
+                color: white;
+                display: block;
+                letter-spacing: 2px;
+                font-weight: 600;
+                width: 100%;
+                height: 100%;
+                text-decoration: none;
+            }
+        }
+        li a:hover {
+            background-color: rgb(30, 144, 255);
+            color: var(--white);
+        }
+    }
+
+}
+
+@media (min-width: 1000px) {
+    .main-navbar {
+        min-width: 275px;
+    }
+}

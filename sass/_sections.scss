@@ -1,0 +1,62 @@
+.chapter {
+    margin: auto;
+    padding-top: 1.5em;
+    width: 85%;
+    h2 {
+        font-size: 1.75em;
+    }
+    h3 {
+        padding-top: 1.5em;
+        font-size: 1.5em;
+    }
+}
+
+.note {
+    margin-bottom: -1rem;
+}
+.consoleDisplay {
+    font-weight: 600;
+    font-style: italic;
+}
+.quote {
+    margin: 2rem auto;
+    width: 80%;
+    max-width: 650px;
+    text-align: center;
+}
+.bullets {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    img {
+        width: 50px;
+    }
+    p {
+        margin-left: 1.5em;
+    }
+}
+.permission {
+    padding: .5rem;
+    text-align: center;
+    border: 2px solid black;
+}
+.permission p:nth-child(1) {
+        font-size: 1.5rem;
+}
+.footer {
+    background-color: dodgerblue;
+    padding: 1.5em;
+    color: var(--black);
+    letter-spacing: 2px;
+    font-family: "Roboto";
+    font-size: 1.25em;
+    text-align: center;
+    margin-top: 500px;
+}
+@media (min-width: 1000px) {
+    .bullets {
+        img {
+            width: 65px;
+        }
+    }
+}

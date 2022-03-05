@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Lobster&family=Roboto:ital,wght@0,500;0,700;0,900;1,300&family=The+Nautigal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>AJAX</title>
+    <link rel="stylesheet" href="main.css" />
+    <script src="main.js" type="module" defer></script>
+  </head>
+  <body>
+    <header class="main-header">
+      <div id="darkMode" class="darkMode">
+        <button id="darkModeBtn" class="dmToggle"></button>
+      </div>
+      <h1><span>javaScript</span> AJAX</h1>
+    </header>
+    <nav class="main-navbar">
+      <h2>AJAX</h2>
+      <ul class="main-navbar__list">
+        <li class="main-navbar__list__item">
+          <a href="#">Home</a>
+        </li>
+        <li class="main-navbar__list__item">
+          <a href="#welcome">Welcome to Ajax</a>
+        </li>
+        <li class="main-navbar__list__item">
+          <a href="#xhr">XHR</a>
+        </li>
+        <li class="main-navbar__list__item">
+          <a href="#httpRequest">HTTP Request</a>
+        </li>
+        <li class="main-navbar__list__item">
+          <a href="#serverResponse">Server Response</a>
+        </li>
+        <li>
+          <a href="#simpleExample">A Simple Example</a>
+        </li>
+        <li>
+          <a href="#xmlResponse">XML Response</a>
+        </li>
+        <li>
+          <a href="#dataResponse">Data Response</a>
+        </li>
+        <li>
+          <a href="#timedXhrExample">Timed XHR Example</a>
+        </li>
+        <li class="main-navbar__list__item">
+          <a href="#linuxUbuntu">XAMPP Linux Ubuntu</a>
+        </li>
+        <li>
+          <a href="#references">Other Resourses</a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <section class="chapter">
+        <p>
+          Hello, my Name is Christopher. I'm learning Frontend Web
+          Devlopment on my own. I've found several resourses available to
+          anyone wanting to learn web development.
+        </p>
+        <p>
+          I use a few different web sites for free courses and reference material, like "Free code Camp", "W3
+          Schools" and "MDN Web Docs". I use these sites for theory, testing and documentation. I also
+          found lots of videos on YouTube that were great for beginers right up to
+          more advanced programming. I did find the theory and having lectures
+          from videos beneficial but they just didn't complete the learning process, I had to take notes
+          too. I try to reference the sites I used for source material when possible in my notes.
+        </p>
+        <p>
+          I've started to build several reference document web pages to practice
+          building web pages while taking notes on different subjects.
+        </p>
+        <br>
+        <h2 id="welcome">Welcome to AJAX</h2>
+        <div class="tutor">
+          <p>Traversy Media</p>
+          <picture>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/82hnvUYY6QA"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </picture>
+          <p>AJAX Crash Course</p>
+        </div>
+        <p class="subHeader">What is AJAX?</p>
+        <div class="outline">
+          <div class="bullets">
+            <img
+              src="https://img.icons8.com/flat-round/64/000000/right--v1.png"
+            />
+            <p>Asynchronous JavaScript & XML</p>
+          </div>
+          <div class="bullets">
+            <img
+              src="https://img.icons8.com/flat-round/64/000000/right--v1.png"
+            />
+            <p>Set of Web Technologies</p>
+          </div>
+          <div class="bullets">
+            <img
+              src="https://img.icons8.com/flat-round/64/000000/right--v1.png"
+            />
+            <p>Send & Receive Data Asynchronously</p>
+          </div>
+          <div class="bullets">
+            <img
+              src="https://img.icons8.com/flat-round/64/000000/right--v1.png"
+            />
+            <p>Does Not Interfere With Current Web Page</p>
+          </div>
+          <div class="bullets">
+            <img
+              src="https://img.icons8.com/flat-round/64/000000/right--v1.png"
+            />
+            <p>JSON Has Replaced XML For The Most Part</p>
+          </div>
+        </div>
+        <div class="summary">
+          <p>
+            <strong
+              ><span style="color: dodgerblue; font-size: 1.5em">A</span
+              >synchronous
+              <span style="color: dodgerblue; font-size: 1.5em">J</span
+              >avaScript
+              <span style="color: dodgerblue; font-size: 1.5em">A</span>nd
+              <span style="color: dodgerblue; font-size: 1.5em">X</span
+              >ML</strong
+            >, while not a technology in itself, is a term coined in 2005 by
+            Jesse James Garrett, that describes a "new" approach to using a
+            number of existing technologies together, including HTML or XHTML,
+            CSS, JavaScript, DOM, XML, XSLT, and most importantly the
+            XMLHttpRequest object. When these technologies are combined in the
+            Ajax model, web applications are able to make quick, incremental
+            updates to the user interface without reloading the entire browser
+            page. This makes the application faster and more responsive to user
+            actions.
+          </p>
+          <p>
+            Although X in Ajax stands for XML, JSON is preferred over XML
+            nowadays because of its many advantages such as being a part of
+            JavaScript, thus being lighter in size. Both JSON and XML are used
+            for packaging information in the Ajax model.
+          </p>
+          <br />
+          <p>
+            In a nutshell, it is the use of the XMLHttpRequest object to
+            communicate with servers. It can send and receive information in
+            various formats, including JSON, XML, HTML, and text files. AJAX's
+            most appealing characteristic is its "asynchronous" nature, which
+            means it can communicate with the server, exchange data, and update
+            the page without having to refresh the page.
+          </p>
+          <p class="subHeader">
+            The two major features of AJAX allow you to do the following:
+          </p>
+          <div class="outline">
+            <div class="bullets">
+              <img
+                src="https://img.icons8.com/flat-round/64/000000/right--v1.png"
+              />
+              <p>Make requests to the server without reloading the page</p>
+            </div>
+            <div class="bullets">
+              <img
+                src="https://img.icons8.com/flat-round/64/000000/right--v1.png"
+              />
+              <p>Receive and work with data from the server</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <br />
+      <hr />
+      <article>
+        <h1 id="xhr">
+          XHR Object
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX/Getting_Started#step_1_%E2%80%93_how_to_make_an_http_request"
+            target="_blank"
+            >MDN Web Docs</a
+          >
+        </h1>
+        <section class="chapter" id="httpRequest">
+          <p class="subHeader">How to make an HTTP request</p>
+          <p>
+            In order to make an HTTP request to the server with JavaScript, you
+            need an instance of an object with the necessary functionality. This
+            is where XMLHttpRequest comes in. Its predecessor originated in
+            Internet Explorer as an ActiveX object called XMLHTTP. Then,
+            Mozilla, Safari, and other browsers followed, implementing an
+            XMLHttpRequest object that supported the methods and properties of
+            Microsoft's original ActiveX object. Meanwhile, Microsoft
+            implemented XMLHttpRequest as well.
+          </p>
+          <p class="subHeader">.onreadystatechange</p>
+          <p>
+            After making a request, you will receive a response back. At this
+            stage, you need to tell the XMLHttp request object which JavaScript
+            function will handle the response, by setting the onreadystatechange
+            property of the object and naming it after the function to call when
+            the request changes state, like this:
+          </p>
+          <pre class="codeExample">
+          <code>
+  httpRequest.onreadystatechange = nameOfTheFunction;
+          </code>
+        </pre>
+          <p>
+            Note that there are no parentheses or parameters after the function
+            name, because you're assigning a reference to the function, rather
+            than actually calling it. Alternatively, instead of giving a
+            function name, you can use the JavaScript technique of defining
+            functions on the fly (called "anonymous functions") to define the
+            actions that will process the response, like this:
+          </p>
+          <pre class="codeExample">
+          <code>
+  httpRequest.onreadystatechange = function(){
+    // Process the server response here.
+};
+          </code>
+        </pre>
+          <p>
+            Next, after declaring what happens when you receive the response,
+            you need to actually make the request, by calling the open() and
+            send() methods of the HTTP request object, like this:
+          </p>
+          <pre class="codeExample">
+          <code>
+  httpRequest.open('GET', 'http://www.example.org/some.file', true);
+  httpRequest.send();
+          </code>
+        </pre>
+          <p class="subHeader">.open parameters</p>
+          <ul>
+            <li>
+              The first parameter of the call to open() is the HTTP request
+              method - GET, POST, HEAD, or another method supported by your
+              server. Keep the method all-capitals as per the HTTP standard,
+              otherwise some browsers (like Firefox) might not process the
+              request. For more information on the possible HTTP request
+              methods, check the W3C specs.
+            </li>
+            <li>
+              The second parameter is the URL you're sending the request to. As
+              a security feature, you cannot call URLs on 3rd-party domains by
+              default. Be sure to use the exact domain name on all of your pages
+              or you will get a "permission denied" error when you call open().
+              A common pitfall is accessing your site by domain.tld, but
+              attempting to call pages with www.domain.tld. If you really need
+              to send a request to another domain, see HTTP access control
+              (CORS).
+            </li>
+            <li>
+              The optional third parameter sets whether the request is
+              asynchronous. If true (the default), JavaScript execution will
+              continue and the user can interact with the page while the server
+              response has yet to arrive. This is the first A in AJAX.
+            </li>
+          </ul>
+          <br />
+          <p class="subHeader">.send parameters</p>
+          <p>
+            The parameter to the send() method can be any data you want to send
+            to the server if POST-ing the request. Form data should be sent in a
+            format that the server can parse, like a query string:
+          </p>
+          <pre class="codeExample">
+          <code>
+  "name=value&anothername="+encodeURIComponent(myVar)+"&so=on"
+          </code>
+        </pre>
+          <p>
+            or other formats, like multipart/form-data, JSON, XML, and so on.
+          </p>
+          <p>
+            Note that if you want to POST data, you may have to set the MIME
+            type of the request. For example, use the following before calling
+            send() for form data sent as a query string:
+          </p>
+          <pre class="codeExample">
+          <code>
+  httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+          </code>
+        </pre>
+          <br />
+        </section>
+        <br />
+        <section class="chapter" id="serverResponse">
+          <p class="subHeader">Handling the server response</p>
+          <p>
+            When you sent the request, you provided the name of a JavaScript
+            function to handle the response:
+          </p>
+          <pre class="codeExample">
+            <code>
+  httpRequest.onreadystatechange = nameOfTheFunction;
+            </code>
+          </pre>
+          <p>
+            What should this function do? First, the function needs to check the
+            request's state. If the state has the value of XMLHttpRequest.DONE
+            (corresponding to 4), that means that the full server response was
+            received and it's OK for you to continue processing it.
+          </p>
+          <pre class="codeExample">
+            <code>
+  if (httpRequest.readyState === XMLHttpRequest.DONE) {
+    // Everything is good, the response was received.
+  } else {
+    // Not ready yet.
+  }
+            </code>
+          </pre>
+          <p>
+            The full list of the readyState values is documented at
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState"
+              target="_blank"
+              >XMLHTTPRequest.readyState</a
+            >
+            and is as follows:
+          </p>
+          <ul>
+            <li>0 (uninitialized) or (request not initialized)</li>
+            <li>1 (loading) or (server connection established)</li>
+            <li>2 (loaded) or (request received)</li>
+            <li>3 (interactive) or (processing request)</li>
+            <li>4 (complete) or (request finished and response is ready)</li>
+          </ul>
+          <br />
+          <p>
+            Next, check the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status"
+              target="_blank"
+              >HTTP response status codes</a
+            >
+            of the HTTP response. The possible codes are listed at the W3C. In
+            the following example, we differentiate between a successful and
+            unsuccessful AJAX call by checking for a 200 OK response code.
+          </p>
+          <pre class="codeExample">
+            <code>
+  if (httpRequest.status === 200) {
+    // Perfect!
+  } else {
+    // There was a problem with the request.
+    // For example, the response may have a 404 (Not Found)
+    // or 500 (Internal Server Error) response code.
+  }
+            </code>
+          </pre>
+          <p>
+            HTTP response status codes indicate whether a specific HTTP request
+            has been successfully completed. Responses are grouped in five
+            classes:
+          </p>
+          <ol>
+            <li>Informational responses (100-199)</li>
+            <li>Successful responses (200-299)</li>
+            <li>Redirection messages (300-399)</li>
+            <li>Client error responses (400-499)</li>
+            <li>Server error responses (500-599)</li>
+          </ol>
+          <br />
+          <p>
+            After checking the state of the request and the HTTP status code of
+            the response, you can do whatever you want with the data the server
+            sent. You have two options to access that data:
+          </p>
+          <ul>
+            <li>
+              httpRequest.responseText - returns the server response as a string
+              of text
+            </li>
+            <li>
+              httpRequest.responseXML - returns the response as an XMLDocument
+              object you can traverse with JavaScript DOM functions
+            </li>
+          </ul>
+          <br />
+          <p>
+            Note that the steps above are valid only if you used an asynchronous
+            request (the third parameter of open() was unspecified or set to
+            true). If you used a synchronous request you don't need to specify a
+            function, but this is highly discouraged as it makes for an awful
+            user experience.
+          </p>
+        </section>
+        <br />
+        <section class="chapter" id="simpleExample">
+          <p class="subHeader">A Simple Example</p>
+          <p>
+            Let's put it all together with a simple HTTP request. Our JavaScript
+            will request an HTML document, test.html, which contains the text
+            "I'm a test." Then we'll alert() the contents of the response. Note
+            that this example uses vanilla JavaScript — no jQuery is involved.
+            Also, the HTML, XML and PHP files should be placed in the same
+            directory.
+          </p>
+          <pre class="codeExample">
+            <code>
+  &ltbutton id="ajaxButton" type="button"&gtMake a request&lt/button&gt
+
+  &ltscript&gt
+    (function() {
+    var httpRequest;
+    document.getElementById("ajaxButton").addEventListener('click', makeRequest);
+
+    function makeRequest() {
+    httpRequest = new XMLHttpRequest();
+
+      if (!httpRequest) {
+        alert('Giving up :( Cannot create an XMLHTTP instance');
+        return false;
+      }
+      httpRequest.onreadystatechange = alertContents;
+      httpRequest.open('GET', 'test.html');
+      httpRequest.send();
+    }
+
+    function alertContents() {
+      if (httpRequest.readyState === XMLHttpRequest.DONE) {
+        if (httpRequest.status === 200) {
+          alert(httpRequest.responseText);
+        } else {
+          alert('There was a problem with the request.');
+        }
+      }
+    }
+  })();
+  &lt/script&gt
+            </code>
+          </pre>
+          <p>In this example:</p>
+          <ul>
+            <li>The user clicks the "Make a request" button;</li>
+            <li>The event handler calls the makeRequest() function;</li>
+            <li>
+              The request is made and then (onreadystatechange) the execution is
+              passed to alertContents();
+            </li>
+            <li>
+              alertContents() checks if the response was received and OK, then
+              alert()s the contents of the test.html file.
+            </li>
+          </ul>
+          <p>Error Handling</p>
+          <p>
+            In the event of a communication error (such as the server going
+            down), an exception will be thrown in the onreadystatechange method
+            when accessing the response status. To mitigate this problem, you
+            could wrap your if...then statement in a try...catch:
+          </p>
+          <pre class="codeExample">
+            <code>
+  function alertContents() {
+    try {
+      if (httpRequest.readyState === XMLHttpRequest.DONE) {
+        if (httpRequest.status === 200) {
+          alert(httpRequest.responseText);
+        } else {
+          alert('There was a problem with the request.');
+        }
+      }
+    }
+    catch( e ) {
+      alert('Caught Exception: ' + e.description);
+    }
+  }
+            </code>
+          </pre>
+        </section>
+        <br />
+        <section class="chapter" id="xmlResponse">
+          <p class="subHeader">Working with the XML response</p>
+          <p>
+            In the previous example, after receiving the response to the HTTP
+            request we used the request object's responseText property , which
+            contained the contents of the test.html file. Now let's try the
+            responseXML property.
+          </p>
+          <p>
+            First off, let's create a valid XML document that we'll request
+            later on. The document (test.xml) contains the following:
+          </p>
+          <pre class="codeExample">
+            <code>
+  &lt?xml version="1.0" ?&gt
+  &ltroot&gt
+    I'm a test.
+  &lt/root&gt
+            </code>
+          </pre>
+          <p>In the script we only need to change the request line to:</p>
+          <pre class="codeExample">
+            <code>
+  ...
+  onclick="makeRequest('test.xml')"&gt
+  ...
+            </code>
+          </pre>
+          <p>
+            Then in alertContents(), we need to replace the line
+            alert(httpRequest.responseText); with:
+          </p>
+          <pre class="codeExample">
+            <code>
+  var xmldoc = httpRequest.responseXML;
+  var root_node = xmldoc.getElementsByTagName('root').item(0);
+  alert(root_node.firstChild.data);
+            </code>
+          </pre>
+          <p>
+            This code takes the XMLDocument object given by responseXML and uses
+            DOM methods to access some of the data contained in the XML
+            document.
+          </p>
+        </section>
+        <br />
+        <section class="chapter" id="dataResponse">
+          <p class="subHeader">Working with data</p>
+          <p>
+            Finally, let's send some data to the server and receive a response.
+            Our JavaScript will request a dynamic page this time, test.php,
+            which will take the data we send and return a "computed" string -
+            "Hello, [user data]!" - which we'll alert().
+          </p>
+          <p>
+            First we'll add a text box to our HTML so the user can enter their
+            name:
+          </p>
+          <pre class="codeExample">
+            <code>
+  &ltlabel>Your name:
+    &ltinput type="text" id="ajaxTextbox" /&gt
+  &lt/label&gt
+  &ltspan id="ajaxButton" style="cursor: pointer; text-decoration: underline"&gt
+  Make a request
+  &lt/span&gt
+            </code>
+          </pre>
+          <p>
+            We'll also add a line to our event handler to get the user's data
+            from the text box and send it to the makeRequest() function along
+            with the URL of our server-side script:
+          </p>
+          <pre class="codeExample">
+            <code>
+  document.getElementById("ajaxButton").onclick = function() {
+      var userName = document.getElementById("ajaxTextbox").value;
+      makeRequest('test.php',userName);
+  };
+            </code>
+          </pre>
+          <p>
+            We need to modify makeRequest() to accept the user data and pass it
+            along to the server. We'll change the request method from GET to
+            POST, and include our data as a parameter in the call to
+            httpRequest.send():
+          </p>
+          <pre class="codeExample">
+            <code>
+  function makeRequest(url, userName) {
+
+    ...
+
+    httpRequest.onreadystatechange = alertContents;
+    httpRequest.open('POST', url);
+    httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    httpRequest.send('userName=' + encodeURIComponent(userName));
+  }
+            </code>
+          </pre>
+          <p>
+            The function alertContents() can be written the same way it was in
+            "A Simple Example" to alert our computed string, if that's all the
+            server returns. However, let's say the server is going to return
+            both the computed string and the original user data. So if our user
+            typed "Jane" in the text box, the server's response would look like
+            this:
+          </p>
+          <p>{"userData":"Jane","computedString":"Hi, Jane!"}</p>
+          <p>
+            To use this data within alertContents(), we can't just alert the
+            responseText, we have to parse it and alert computedString, the
+            property we want:
+          </p>
+          <pre class="codeExample">
+            <code>
+  function alertContents() {
+    if (httpRequest.readyState === XMLHttpRequest.DONE) {
+      if (httpRequest.status === 200) {
+        var response = JSON.parse(httpRequest.responseText);
+        alert(response.computedString);
+      } else {
+        alert('There was a problem with the request.');
+      }
+    }
+  }
+            </code>
+          </pre>
+          <p>The test.php file should contain the following:</p>
+          <pre class="codeExample">
+            <code>
+  $name = (isset($_POST['userName'])) ? $_POST['userName'] : 'no name';
+  $computedString = "Hi, " . $name . "!";
+  $array = ['userName' => $name, 'computedString' =>  $computedString];
+  echo json_encode($array);
+            </code>
+          </pre>
+        </section>
+        <br />
+        <section class="chapter" id="timedXhrExample">
+          <p class="subHeader">Timed XHR Example</p>
+          <p>
+            Another simple example follows — here we are loading a text file via
+            XHR, the structure of which is assumed to be like this:
+          </p>
+          <pre class="codeExample">
+            <code>
+  TIME: 312.05
+  TIME: 312.07
+  TIME: 312.10
+  TIME: 312.12
+  TIME: 312.14
+  TIME: 312.15
+            </code>
+          </pre>
+          <p>
+            Once the text file is loaded, we split() the items into an array at
+            each newline character (\n — basically where each line break is in
+            the text file), and then print the complete list of timestamps, and
+            the last timestamp, onto the page.
+          </p>
+          <p>
+            This is repeated every 5 seconds, using a setInterval() call. The
+            idea would be that a server-side script of some kind would
+            continually update the text file with new timestamps, and our XHR
+            code would be used to report the latest timestamp on the
+            client-side.
+          </p>
+          <pre class="codeExample">
+            <code>
+  &lt!DOCTYPE html&gt
+  &lthtml&gt
+    &lthead&gt
+      &ltmeta charset="utf-8"&gt
+      &lttitle&gtXHR log time&lt/title&gt
+      &ltstyle&gt
+
+      &lt/style&gt
+    &lt/head&gt
+    &ltbody&gt
+      &ltp id="writeData" class="data"&gtOff-Line&lt/p&gt
+      &ltp id="lastStamp"&gtNo Data yet&lt/p&gt
+
+      &ltscript&gt 
+      const fullData = document.getElementById('writeData');
+      const lastData = document.getElementById('lastStamp');
+
+      function fetchData() {
+        console.log('Fetching updated data.');
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", "time-log.txt", true);
+        xhr.onload = function() {
+          updateDisplay(xhr.response);
+        }
+        xhr.send();
+      }
+
+      function updateDisplay(text) {
+        fullData.textContent = text;
+
+        let timeArray = text.split('\n');
+
+        // included because some file systems always include a blank line at the end of text files.
+        if(timeArray[timeArray.length-1] === '') {
+          timeArray.pop();
+        }
+
+        lastData.textContent = timeArray[timeArray.length-1];
+      }
+
+      setInterval(fetchData, 5000);
+      &lt/script&gt
+    &lt/body&gt
+  &lt/html&gt
+            </code>
+          </pre>
+        </section>
+        <br />
+        <section class="chapter">
+          <h2>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest"
+              target="_blank"
+              >MDN XMLHttpRequest</a
+            >
+          </h2>
+        </section>
+      </article>
+      <br />
+      <hr />
+      <section class="chapter" id="linuxUbuntu">
+        <h2>Ubuntu</h2>
+        <div class="permission">
+          <p>XAMPP</p>
+          <p>Change User Permission for <em>htdocs</em> Directory</p>
+          <br />
+          <p>Terminal Prompt</p>
+          <br />
+          <p>Enter this Code for Granting Write Permission for All Users</p>
+          <code>&lt!-- $sudo chmod -R 777 /opt/lampp/htdocs --&gt</code>
+          <br />
+          <br />
+          <p>Use this code to Remove Write Permission for All Users</p>
+          <code>&lt!-- $sudo chmod -R 755 /opt/lampp/htdocs --&gt</code>
+          <br />
+          <br />
+          <p>****</p>
+          <p>Enter this Code to see current user name & primary group name</p>
+          <code>&lt!-- $whoami --&gt</code>
+          <p>// this will show the username of the current user</p>
+          <code>&lt!-- $id -gn --&gt</code>
+          <p>// this will show the primary group name of the current user</p>
+          <br />
+          <p>Once you know the names of both</p>
+          <p>Enter this Code to Change Ownership</p>
+          <code
+            >&lt!-- sudo chown -R [Username]:[Groupname] /opt/lampp/htdocs
+            --&gt</code
+          >
+          <br />
+          <br />
+          <br />
+        </div>
+        <h2>Start XAMPP</h2>
+        <div class="permission">
+          <p>You can use one of the commands below.</p>
+          <br />
+          <p>Terminal Prompt</p>
+          <p>If you use a 32-bit system:</p>
+          <code> &lt!-- sudo /opt/lampp/manager-linux.run --&gt </code>
+          <br />
+          <br />
+          <p>If you use a 64-bit system:</p>
+          <code> &lt!-- sudo /opt/lampp/manager-linux-x64.run --&gt </code>
+          <br />
+          <br />
+          <br />
+        </div>
+        <h2>Using mySQL with XAMPP</h2>
+        <div class="permission">
+          <p>If mySQL is stopped in XAMPP</p>
+          <p>use the following Code</p>
+          <br />
+          <p>Terminal Prompt</p>
+          <p>Use this Code to Stop the mysql-server service</p>
+          <code> &lt!-- sudo service mysql stop --&gt </code>
+          <br />
+          <br />
+          <p>Restart mySQL with the XAMPP control panel Manage Servers Tab</p>
+          <br />
+          <br />
+          <br />
+        </div>
+      </section>
+      <br />
+    </main>
+    <aside id="references">
+      <h2>Other Video Resourses & Courses</h2>
+      <div class="tutor">
+        <p class="subHeader">The Net Ninja:</p>
+        <p>
+          <a href="https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg"
+            >Youtube - The Net Ninja
+          </a>
+        </p>
+        <p>
+          <a href="https://netninja.dev/">Web Site - The Net Ninja</a>
+        </p>
+        <picture>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/ZcQyJ-gxke0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </picture>
+      </div>
+    </aside>
+    <footer class="footer">
+      Christopher Guy <span>O/A</span> Softcorp Industries
+    </footer>
+  </body>
+</html>

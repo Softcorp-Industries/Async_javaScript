@@ -1,0 +1,65 @@
+@use "_global" as *;
+@use "_mixin" as *;
+
+.darkMode {
+    @include shadowSm-inset;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 3px;
+    top: 20px;
+    right: 15px;
+    width: 50px;
+    height: 26px;
+    background-color: var(--bgDarkMode);
+    border-radius: 70px;
+    z-index: 10;
+    .dmToggle {
+      cursor: pointer;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: none;
+      background-image: url("img/icon/936949-200.png");
+      background-size: contain;
+      background-position: center;
+    }
+  }
+  .darkMode.showDarkMode{
+    display: flex;
+    animation: darkModeShow 750ms ease-in-out forwards;
+  }
+  .dmToggle.darkModeAnim{
+    animation: dmAnim 500ms ease-in-out forwards;
+  }
+  .dmToggle.darkModeAnimRev{
+    animation: dmAnimRev 500ms ease-in-out forwards;
+  }
+  @keyframes darkModeShow{
+    0%{
+      scale: 0;
+      opacity: 0;
+    }
+    
+    100%{
+      scale: 1;
+        opacity: 1;
+    }
+  }
+  @keyframes dmAnim {
+    0%{
+      transform: translateX(0px);
+    }
+    100%{
+      transform: translateX(23px);
+    }
+  }
+  @keyframes dmAnimRev {
+    0%{
+      transform: translateX(23px);
+    }
+    100%{
+      transform: translateX(0px);
+    }
+  }
