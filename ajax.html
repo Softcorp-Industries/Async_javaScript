@@ -25,7 +25,7 @@
       <h2>AJAX</h2>
       <ul class="main-navbar__list">
         <li class="main-navbar__list__item">
-          <a href="#">Home</a>
+          <a href="index.html">Home</a>
         </li>
         <li class="main-navbar__list__item">
           <a href="#welcome">Welcome to Ajax</a>
@@ -59,26 +59,41 @@
         </li>
       </ul>
     </nav>
-    <main>
-      <section class="chapter">
+    <section class="intro">
+      <div class="readMore-top">
         <p>
-          Hello, my Name is Christopher. I'm learning Frontend Web
-          Devlopment on my own. I've found several resourses available to
-          anyone wanting to learn web development.
+          Hello, my Name is Christopher. I'm learning Frontend Web Devlopment on
+          my own. I've found several resourses available to anyone wanting to
+          learn web development.
         </p>
+      </div>
+      <div class="readMore-section">
         <p>
-          I use a few different web sites for free courses and reference material, like "Free code Camp", "W3
-          Schools" and "MDN Web Docs". I use these sites for theory, testing and documentation. I also
-          found lots of videos on YouTube that were great for beginers right up to
+          I use a few different web sites for free courses and reference
+          material, like "Free code Camp", "W3 Schools" and "MDN Web Docs". I
+          use these sites for theory, testing and documentation. I also found
+          lots of videos on YouTube that were great for beginers right up to
           more advanced programming. I did find the theory and having lectures
-          from videos beneficial but they just didn't complete the learning process, I had to take notes
-          too. I try to reference the sites I used for source material when possible in my notes.
+          from videos beneficial but they just didn't complete the learning
+          process, I had to take notes too. I try to reference the sites I used
+          for source material when possible in my notes.
         </p>
         <p>
           I've started to build several reference document web pages to practice
           building web pages while taking notes on different subjects.
         </p>
-        <br>
+      </div>
+      <button class="btn-readMore">
+        read more
+        <img
+          class="readMore-img"
+          src="./img/icon/icons8-chevron-24.png"
+          alt=""
+        />
+      </button>
+    </section>
+    <main>
+      <section class="chapter">
         <h2 id="welcome">Welcome to AJAX</h2>
         <div class="tutor">
           <p>Traversy Media</p>
@@ -98,33 +113,23 @@
         <p class="subHeader">What is AJAX?</p>
         <div class="outline">
           <div class="bullets">
-            <img
-              src="https://img.icons8.com/flat-round/64/000000/right--v1.png"
-            />
+            <img src="./img/icon/icons8-right-64.png" />
             <p>Asynchronous JavaScript & XML</p>
           </div>
           <div class="bullets">
-            <img
-              src="https://img.icons8.com/flat-round/64/000000/right--v1.png"
-            />
+            <img src="./img/icon/icons8-right-64.png" />
             <p>Set of Web Technologies</p>
           </div>
           <div class="bullets">
-            <img
-              src="https://img.icons8.com/flat-round/64/000000/right--v1.png"
-            />
+            <img src="./img/icon/icons8-right-64.png" />
             <p>Send & Receive Data Asynchronously</p>
           </div>
           <div class="bullets">
-            <img
-              src="https://img.icons8.com/flat-round/64/000000/right--v1.png"
-            />
+            <img src="./img/icon/icons8-right-64.png" />
             <p>Does Not Interfere With Current Web Page</p>
           </div>
           <div class="bullets">
-            <img
-              src="https://img.icons8.com/flat-round/64/000000/right--v1.png"
-            />
+            <img src="./img/icon/icons8-right-64.png" />
             <p>JSON Has Replaced XML For The Most Part</p>
           </div>
         </div>
@@ -168,15 +173,11 @@
           </p>
           <div class="outline">
             <div class="bullets">
-              <img
-                src="https://img.icons8.com/flat-round/64/000000/right--v1.png"
-              />
+              <img src="./img/icon/icons8-right-64.png" />
               <p>Make requests to the server without reloading the page</p>
             </div>
             <div class="bullets">
-              <img
-                src="https://img.icons8.com/flat-round/64/000000/right--v1.png"
-              />
+              <img src="./img/icon/icons8-right-64.png" />
               <p>Receive and work with data from the server</p>
             </div>
           </div>
@@ -795,10 +796,21 @@
           <a href="https://netninja.dev/">Web Site - The Net Ninja</a>
         </p>
         <picture>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/ZcQyJ-gxke0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/ZcQyJ-gxke0"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
         </picture>
       </div>
     </aside>
+    <button id="topBtn">
+      <img src="./img/icon/icons8-right-64.png" alt="" title="Top of Page" />
+    </button>
     <footer class="footer">
       Christopher Guy <span>O/A</span> Softcorp Industries
     </footer>
