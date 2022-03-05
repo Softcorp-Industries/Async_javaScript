@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Lobster&family=Roboto:ital,wght@0,500;0,700;0,900;1,300&family=The+Nautigal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>JSON</title>
+    <link rel="stylesheet" href="main.css" />
+    <script src="main.js" type="module" defer></script>
+  </head>
+  <body>
+    <header class="main-header">
+      <div id="darkMode" class="darkMode">
+        <button id="darkModeBtn" class="dmToggle"></button>
+      </div>
+      <h1><span>javaScript</span> JSON</h1>
+    </header>
+    <nav class="main-navbar">
+      <h2><span>{</span> JSON <span>}</span></h2>
+      <ul class="main-navbar__list">
+        <li class="main-navbar__list__item">
+          <a href="#">Home</a>
+        </li>
+        <li class="main-navbar__list__item">
+          <a href="#welcome">Welcome to JSON</a>
+        </li>
+        <li class="main-navbar__list__item">
+          <a href="#json">JSON</a>
+        </li>
+        <li class="main-navbar__list__item">
+          <a href="#jsJson">javaScript vs JSON</a>
+        </li>
+        <li>
+          <a href="#staticMethods">Static Methods</a>
+        </li>
+        <li>
+          <a href="#parse">JSON.parse()</a>
+        </li>
+        <li>
+          <a href="#stringify">JSON.stringify()</a>
+        </li>
+        <li>
+          <a href="#toJSON">toJSON()</a>
+        </li>
+        <li>
+          <a href="#jsonExample">JSON Example</a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <section class="chapter">
+        <p>
+          Hello, my Name is Christopher. I'm learning Frontend Web Devlopment on
+          my own. I've found several resourses available to anyone wanting to
+          learn web development.
+        </p>
+        <p>
+          I use a few different web sites for free courses and reference
+          material, like "Free code Camp", "W3 Schools" and "MDN Web Docs". I
+          use these sites for theory, testing and documentation. I also found
+          lots of videos on YouTube that were great for beginers right up to
+          more advanced programming. I did find the theory and having lectures
+          from videos beneficial but they just didn't complete the learning
+          process, I had to take notes too. I try to reference the sites I used
+          for source material when possible in my notes.
+        </p>
+        <p>
+          I've started to build several reference document web pages to practice
+          building web pages while taking notes on different subjects.
+        </p>
+        <br />
+        <h2 id="welcome">Welcome to JSON</h2>
+        <div class="tutor">
+          <p>Traversy Media</p>
+          <picture>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/wI1CWzNtE-M"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </picture>
+          <p>JSON Crash Course</p>
+        </div>
+        <p class="subHeader">What is JSON?</p>
+        <div class="outline">
+          <div class="bullets">
+            <img
+              src="https://img.icons8.com/flat-round/64/000000/right--v1.png"
+            />
+            <p>JavaScript Object Notation</p>
+          </div>
+          <div class="bullets">
+            <img
+              src="https://img.icons8.com/flat-round/64/000000/right--v1.png"
+            />
+            <p>Lightweight data-interchange format</p>
+          </div>
+          <div class="bullets">
+            <img
+              src="https://img.icons8.com/flat-round/64/000000/right--v1.png"
+            />
+            <p>Based on a subset of javaScript</p>
+          </div>
+          <div class="bullets">
+            <img
+              src="https://img.icons8.com/flat-round/64/000000/right--v1.png"
+            />
+            <p>Easy to read and write</p>
+          </div>
+          <div class="bullets">
+            <img
+              src="https://img.icons8.com/flat-round/64/000000/right--v1.png"
+            />
+            <p>Often used with AJAX</p>
+          </div>
+          <div class="bullets">
+            <img
+              src="https://img.icons8.com/flat-round/64/000000/right--v1.png"
+            />
+            <p>Can be used with most modern languages</p>
+          </div>
+        </div>
+        <div class="summary">
+          <p class="subHeader">JSON Data Types:</p>
+          <ul>
+            <li>
+              <strong>Number:</strong> No difference between interger and floats
+            </li>
+            <li>
+              <strong>String:</strong> string of Unicode characters. Use double
+              quotes
+            </li>
+            <li><strong>Boolean:</strong> True or False</li>
+            <li><strong>Array:</strong> Ordered list of 0 or more values</li>
+            <li>
+              <strong>Object:</strong> unordered collection of key/value pairs
+            </li>
+            <li><strong>Null:</strong> Empty value</li>
+          </ul>
+        </div>
+        <div class="summary">
+          <p class="subHeader">JSON Syntax Rules:</p>
+          <ul>
+            <li>
+              Uses key/valuepairs - <strong>{"name":"Christopher"}</strong>
+            </li>
+            <li>
+              Uses double quotes around <strong>KEY</strong> and
+              <strong>Value</strong>
+            </li>
+            <li>Must use the specified <strong>data type</strong></li>
+            <li>File type is <strong>".json"</strong></li>
+            <li>MIME type is <strong>"Application/json"</strong></li>
+          </ul>
+        </div>
+      </section>
+      <br />
+      <hr />
+      <article>
+        <h1 id="json">
+          JSON
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON"
+            >MDN Web Docs</a
+          >
+        </h1>
+        <section class="chapter">
+          <p>
+            The JSON object contains methods for parsing JavaScript Object
+            Notation (JSON) and converting values to JSON. It can't be called or
+            constructed, and aside from its two method properties, it has no
+            interesting functionality of its own.
+          </p>
+        </section>
+        <section class="chapter" id="jsJson">
+          <h2>JavaScript and JSON differences</h2>
+          <p>
+            JSON is a syntax for serializing objects, arrays, numbers, strings,
+            booleans, and null. It is based upon JavaScript syntax but is
+            distinct from it: some JavaScript is not JSON.
+          </p>
+          <p class="subHeader note">JSON Example:</p>
+          <pre class="codeExample">
+            <code>
+  {
+    "browsers": {
+      "firefox": {
+        "name": "Firefox",
+        "pref_url": "about:config",
+        "releases": {
+          "1": {
+            "release_date": "2004-11-09",
+            "status": "retired",
+            "engine": "Gecko",
+            "engine_version": "1.7"
+          }
+        }
+      }
+    }
+  }
+            </code>
+          </pre>
+          <p class="subHeader note">Objects and Arrays</p>
+          <p>
+            Property names must be double-quoted strings; trailing commas are
+            forbidden.
+          </p>
+          <p class="subHeader note">Numbers</p>
+          <p>
+            Leading zeros are prohibited. A decimal point must be followed by at
+            least one digit. NaN and Infinity are unsupported.
+          </p>
+          <p class="subHeader note">
+            Any JSON text is a valid JavaScript expression...
+          </p>
+          <p>
+            ...But only in JavaScript engines that have implemented the proposal
+            to make all JSON text valid ECMA-262. In engines that haven't
+            implemented the proposal, U+2028 LINE SEPARATOR and U+2029 PARAGRAPH
+            SEPARATOR are allowed in string literals and property keys in JSON;
+            but their use in these features in JavaScript string literals is a
+            SyntaxError.
+          </p>
+          <p>Consider this example where JSON.parse() parses the string as JSON and eval executes the string as JavaScript: </p>
+          <pre class="codeExample">
+            <code>
+  let code = '"\u2028\u2029"'
+  JSON.parse(code)  // evaluates to "\u2028\u2029" in all engines
+  eval(code)        // throws a SyntaxError in old engines
+            </code>
+          </pre>
+          <p>Other differences include allowing only double-quoted strings and having no provisions for undefined or comments. For those who wish to use a more human-friendly configuration format based on JSON, there is JSON5, used by the Babel compiler, and the more commonly used YAML. </p>
+        </section>
+        <section class="chapter" id="staticMethods">
+          <h2>Static methods</h2>
+          <p class="subHeader note">JSON.parse(text[, reviver])</p>
+          <p>Parse the string text as JSON, optionally transform the produced value and its properties, and return the value. Any violations of the JSON syntax, including those pertaining to the differences between JavaScript and JSON, cause a SyntaxError to be thrown. The reviver option allows for interpreting what the replacer has used to stand in for other datatypes.</p>
+          <p class="subHeader note">JSON.stringify(value[, replacer[, space]])</p>
+          <p>Return a JSON string corresponding to the specified value, optionally including only certain properties or replacing property values in a user-defined manner. By default, all instances of undefined are replaced with null, and other unsupported native data types are censored. The replacer option allows for specifying other behavior.</p>
+        </section>
+        <section class="chapter" id="parse">
+          <h2>JSON.parse()</h2>
+          <p>The JSON.parse() method parses a JSON string, constructing the JavaScript value or object described by the string. An optional reviver function can be provided to perform a transformation on the resulting object before it is returned. </p>
+          <pre class="codeExample">
+            <code>
+  const json = '{"result":true, "count":42}';
+  const obj = JSON.parse(json);
+
+  console.log(obj.count);
+  // expected output: 42
+
+  console.log(obj.result);
+  // expected output: true
+            </code>
+          </pre>
+          <p class="subHeader">Syntax</p>
+          <pre class="codeExample">
+            <code>
+  JSON.parse(text)
+  JSON.parse(text, reviver)
+            </code>
+          </pre>
+          <p class="subHeader"><strong>Parameters</strong></p>
+          <p class="note">text</p>
+          <p>The string to parse as JSON. See the JSON object for a description of JSON syntax.</p>
+          <br>
+          <p class="note">reviver</p>
+          <p>If a function, this prescribes how the value originally produced by parsing is transformed, before being returned.</p>
+          <br>
+          <p class="note"><strong>Return Value</strong></p>
+          <p>The Object, Array, string, number, boolean, or null value corresponding to the given JSON text. </p>
+          <br>
+          <p class="note"><strong>Execptions</strong></p>
+          <p>Throws a SyntaxError exception if the string to parse is not valid JSON.</p>
+          <br>
+          <p class="subHeader note">Using JSON.parse()</p>
+          <pre class="codeExample">
+            <code>
+  JSON.parse('{}');              // {}
+  JSON.parse('true');            // true
+  JSON.parse('"foo"');           // "foo"
+  JSON.parse('[1, 5, "false"]'); // [1, 5, "false"]
+  JSON.parse('null');            // null
+            </code>
+          </pre>
+          <p class="subHeader">Using the reviver parameter</p>
+          <p>If a reviver is specified, the value computed by parsing is transformed before being returned. Specifically, the computed value and all its properties (beginning with the most nested properties and proceeding to the original value itself) are individually run through the reviver. Then it is called, with the object containing the property being processed as this, and with the property name as a string, and the property value as arguments. If the reviver function returns undefined (or returns no value, for example, if execution falls off the end of the function), the property is deleted from the object. Otherwise, the property is redefined to be the return value.</p>
+          <p>If the reviver only transforms some values and not others, be certain to return all untransformed values as-is, otherwise, they will be deleted from the resulting object.</p>
+          <pre class="codeExample">
+            <code>
+  JSON.parse('{"p": 5}', (key, value) =>
+    typeof value === 'number'
+      ? value * 2 // return value * 2 for numbers
+      : value     // return everything else unchanged
+  );
+
+  // { p: 10 }
+
+  JSON.parse('{"1": 1, "2": 2, "3": {"4": 4, "5": {"6": 6}}}', (key, value) => {
+    console.log(key); // log the current property name, the last is "".
+    return value;     // return the unchanged property value.
+  });
+
+  // 1
+  // 2
+  // 4
+  // 6
+  // 5
+  // 3
+  // ""
+            </code>
+          </pre>
+          <p class="subHeader">JSON.parse() does not allow trailing commas</p>
+          <pre class="codeExample">
+            <code>
+  // both will throw a SyntaxError
+  JSON.parse('[1, 2, 3, 4, ]');
+  JSON.parse('{"foo" : 1, }');
+            </code>
+          </pre>
+          <p class="subHeader">JSON.parse() does not allow single quotes</p>
+          <pre class="codeExample">
+            <code>
+  // will throw a SyntaxError
+  JSON.parse("{'foo': 1}");
+            </code>
+          </pre>
+        </section>
+        <section class="chapter" id="stringify">
+          <h2>JSON.stringify()</h2>
+          <p>The JSON.stringify() method converts a JavaScript object or value to a JSON string, optionally replacing values if a replacer function is specified or optionally including only the specified properties if a replacer array is specified. </p>
+          <pre class="codeExample">
+            <code>
+  console.log(JSON.stringify({ x: 5, y: 6 }));
+  // expected output: "{"x":5,"y":6}"
+
+  console.log(JSON.stringify([new Number(3), new String('false'), new Boolean(false)]));
+  // expected output: "[3,"false",false]"
+
+  console.log(JSON.stringify({ x: [10, undefined, function(){}, Symbol('')] }));
+  // expected output: "{"x":[10,null,null,null]}"
+
+  console.log(JSON.stringify(new Date(2006, 0, 2, 15, 4, 5)));
+  // expected output: ""2006-01-02T15:04:05.000Z""
+            </code>
+          </pre>
+          <p class="subHeader">Syntax</p>
+          <pre class="codeExample">
+            <code>
+  JSON.stringify(value)
+  JSON.stringify(value, replacer)
+  JSON.stringify(value, replacer, space)
+            </code>
+          </pre>
+          <p class="subHeader">Parameters</p>
+          <p class="note"><strong>value</strong></p>
+          <p>The value to convert to a JSON string.</p>
+          <br>
+          <p class="note"><strong>replacer</strong> (optional)</p>
+          <p>A function that alters the behavior of the stringification process, or an array of strings or numbers naming properties of value that should be included in the output. If replacer is null or not provided, all properties of the object are included in the resulting JSON string. </p>
+          <br>
+          <p class="note"><strong>space</strong> (optional)</p>
+          <p>A String or Number object that's used to insert white space (including indentation, line break characters, etc.) into the output JSON string for readability purposes.</p>
+          <p>If this is a Number, it indicates the number of space characters to use as white space for indenting purposes; this number is capped at 10 (if it is greater, the value is just 10). Values less than 1 indicate that no space should be used.</p>
+          <p>If this is a String, the string (or the first 10 characters of the string, if it's longer than that) is used as white space.</p>
+          <p>If this parameter is not provided (or is null), no white space is used.</p>
+          <br>
+          <p class="subHeader note">Return value</p>
+          <p>A JSON string representing the given value, or undefined.</p>
+          <br>
+          <p class="subHeader">Exceptions</p>
+          <ul>
+            <li>Throws a TypeError ("cyclic object value") exception when a circular reference is found.</li>
+            <li>Throws a TypeError ("BigInt value can't be serialized in JSON") when trying to stringify a BigInt value.</li>
+          </ul>
+          <br>
+          <p class="subHeader">Description</p>
+          <ul>
+            <li>If the value has a toJSON() method, it's responsible to define what data will be serialized.</li>
+            <li>Boolean, Number, and String objects are converted to the corresponding primitive values during stringification, in accord with the traditional conversion semantics.</li>
+            <li>undefined, Functions, and Symbols are not valid JSON values. If any such values are encountered during conversion they are either omitted (when found in an object) or changed to null (when found in an array). JSON.stringify() can return undefined when passing in "pure" values like JSON.stringify(function() {}) or JSON.stringify(undefined).</li>
+            <li>All Symbol-keyed properties will be completely ignored, even when using the replacer function.</li>
+            <li>The instances of Date implement the toJSON() function by returning a string (the same as date.toISOString()). Thus, they are treated as strings.</li>
+            <li>The numbers Infinity and NaN, as well as the value null, are all considered null. </li>
+            <li>All the other Object instances (including Map, Set, WeakMap, and WeakSet) will have only their enumerable properties serialized.</li>
+          </ul>
+          <br>
+          <p class="subHeader">The replacer parameter</p>
+          <p>The replacer parameter can be either a function or an array.</p>
+          <p>As a function, it takes two parameters: the key and the value being stringified. The object in which the key was found is provided as the replacer's this parameter.</p>
+          <p>Initially, the replacer function is called with an empty string as key representing the object being stringified. It is then called for each property on the object or array being stringified.</p>
+          <p>It should return the value that should be added to the JSON string, as follows:</p>
+          <ul>
+            <li>If you return a Number, String, Boolean, or null, the stringified version of that value is used as the property's value.</li>
+            <li>If you return a Function, Symbol, or undefined, the property is not included in the output.</li>
+            <li>If you return any other object, the object is recursively stringified, calling the replacer function on each property.</li>
+          </ul>
+          <p class="subHeader note">Example replacer, as a function</p>
+          <pre class="codeExample">
+            <code>
+  function replacer(key, value) {
+    // Filtering out properties
+    if (typeof value === 'string') {
+      return undefined;
+    }
+    return value;
+  }
+
+  var foo = {foundation: 'Mozilla', model: 'box', week: 45, transport: 'car', month: 7};
+  JSON.stringify(foo, replacer);
+  // '{"week":45,"month":7}'
+            </code>
+          </pre>
+          <p class="subHeader note">Example replacer, as an array</p>
+          <p>If replacer is an array, the array's values indicate the names of the properties in the object that should be included in the resulting JSON string.</p>
+          <pre class="codeExample">
+            <code>
+  JSON.stringify(foo, ['week', 'month']);
+  // '{"week":45,"month":7}', only keep "week" and "month" properties
+            </code>
+          </pre>
+          <p class="subHeader">The space argument</p>
+          <p>The space argument may be used to control spacing in the final string.</p>
+          <ul>
+            <li>If it is a number, successive levels in the stringification will each be indented by this many space characters (up to 10).</li>
+            <li>If it is a string, successive levels will be indented by this string (or the first ten characters of it).</li>
+          </ul>
+          <pre class="codeExample">
+            <code>
+  JSON.stringify({ a: 2 }, null, ' ');
+  // '{
+  //  "a": 2
+  // }'
+            </code>
+          </pre>
+          <p>Using a tab character mimics standard pretty-print appearance:</p>
+          <pre class="codeExample">
+            <code>
+  JSON.stringify({ uno: 1, dos: 2 }, null, '\t');
+  // returns the string:
+  // '{
+  //     "uno": 1,
+  //     "dos": 2
+  // }'
+            </code>
+          </pre>
+          <br>
+        </section>
+        <section class="chapter" id="toJSON">    
+          <h2>toJSON() behavior</h2>
+          <p>If an object being stringified has a property named toJSON whose value is a function, then the toJSON() method customizes JSON stringification behavior: instead of the object being serialized, the value returned by the toJSON() method when called will be serialized. JSON.stringify() calls toJSON with one parameter:</p>
+          <ul>
+            <li>if this object is a property value, the property name</li>
+            <li>if it is in an array, the index in the array, as a string</li>
+            <li>an empty string if JSON.stringify() was directly called on this object</li>
+          </ul>
+          <p class="subHeader note">Example:</p>
+          <pre class="codeExample">
+            <code>
+  var obj = {
+      data: 'data',
+
+      toJSON (key) {
+          if (key)
+              return `Now I am a nested object under key '${key}'`;
+         else
+              return this;
+      }
+  };
+
+  JSON.stringify(obj);
+  // '{"data":"data"}'
+
+  JSON.stringify({ obj }); // Shorthand property names (ES2015).
+  // '{"obj":"Now I am a nested object under key 'obj'"}'
+
+  JSON.stringify([ obj ]);
+  // '["Now I am a nested object under key '0'"]'
+            </code>
+          </pre>
+          <br>
+        </section>
+        <section class="chapter" id="jsonExample">  
+          <h2>Example of using JSON.stringify() with localStorage</h2>
+          <p>In a case where you want to store an object created by your user and allowing it to be restored even after the browser has been closed, the following example is a model for the applicability of JSON.stringify():</p>
+          <pre class="codeExample">
+            <code>
+  // Creating an example of JSON
+  var session = {
+    'screens': [],
+    'state': true
+  };
+  session.screens.push({ 'name': 'screenA', 'width': 450, 'height': 250 });
+  session.screens.push({ 'name': 'screenB', 'width': 650, 'height': 350 });
+  session.screens.push({ 'name': 'screenC', 'width': 750, 'height': 120 });
+  session.screens.push({ 'name': 'screenD', 'width': 250, 'height': 60 });
+  session.screens.push({ 'name': 'screenE', 'width': 390, 'height': 120 });
+  session.screens.push({ 'name': 'screenF', 'width': 1240, 'height': 650 });
+
+  // Converting the JSON string with JSON.stringify()
+  // then saving with localStorage in the name of session
+  localStorage.setItem('session', JSON.stringify(session));
+
+  // Example of how to transform the String generated through
+  // JSON.stringify() and saved in localStorage in JSON object again
+  var restoredSession = JSON.parse(localStorage.getItem('session'));
+
+  // Now restoredSession variable contains the object that was saved
+  // in localStorage
+  console.log(restoredSession);
+            </code>
+          </pre>
+        </section>
+      </article>
+      <hr>
+    </main>
+  </body>
+</html>
