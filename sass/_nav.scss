@@ -1,53 +1,152 @@
-.main-navbar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    min-width: 215px;
-    height: 99vh;
-    overflow: auto;
-    background-color: black;
-    border: 1px solid black;
-    font-family: "Roboto";
-    h2 {
-        margin: 0;
-        padding: .5rem 0;
-        text-align: center;
-        color: var(--black);
-        background-color: dodgerblue;
-        border-bottom: 1px solid black;
-        span {
-            color: var(--jsThemeClr);
-        }
-    }
-    ul{
-        padding-left: 0;
-        li {
-            display: flex;
-            align-items: center;
-            //background-color: rgb(30, 144, 255, .5);
-            border-bottom: 1px solid dodgerblue;
-            margin-bottom: 0;
-            a {
-                padding: .75em .5em;
-                color: white;
-                display: block;
-                letter-spacing: 2px;
-                font-weight: 600;
-                width: 100%;
-                height: 100%;
-                text-decoration: none;
-            }
-        }
-        li a:hover {
-            background-color: rgb(30, 144, 255);
-            color: var(--white);
-        }
-    }
+.main-nav {
+  position: fixed;
+  left: -250px;
+  top: 0;
+  min-width: 215px;
+  height: 99vh;
+  //overflow: auto;
+  background-color: black;
+  border: 1px solid black;
+  font-family: "Roboto";
+  transition: all 0.5s ease-in-out;
 
+  h2 {
+    margin: 0;
+    padding: 0.5rem 0;
+    text-align: center;
+    color: var(--black);
+    background-color: dodgerblue;
+    border-bottom: 1px solid black;
+    span {
+      color: var(--jsThemeClr);
+    }
+  }
+  .navBar {
+    padding-left: 0;
+    li {
+      display: flex;
+      align-items: center;
+      //background-color: rgb(30, 144, 255, .5);
+      border-bottom: 1px solid dodgerblue;
+      margin-bottom: 0;
+      a {
+        padding: 0.75em 0.5em;
+        color: white;
+        display: block;
+        letter-spacing: 2px;
+        font-weight: 600;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+      }
+    }
+    li a:hover {
+      background-color: rgb(30, 144, 255);
+      color: var(--white);
+    }
+  }
+  .navBar-menu {
+    position: absolute;
+    cursor: pointer;
+    top: 20px;
+    left: 260px;
+    height: 60px;
+    width: 60px;
+    z-index: 10;
+    .navBar-btn {
+      //z-index: 50;
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 4px;
+      width: 40px;
+      background-color: dodgerblue;
+      //box-shadow: 0px 0px 3px black;
+      border-radius: 25%;
+    }
+    .navBar-btn::before,
+    .navBar-btn::after {
+      content: "";
+      cursor: pointer;
+      position: absolute;
+      height: 4px;
+      background-color: dodgerblue;
+      //box-shadow: 0px 0px 3px black;
+      border-radius: 25%;
+      transition: all 0.5s ease-in-out;
+    }
+    .navBar-btn::before {
+      width: 35px;
+      height: 5px;
+      transform: translateY(-8px);
+    }
+    .navBar-btn::after {
+      width: 45px;
+      height: 5px;
+      transform: translateY(8px);
+    }
+  }
+}
+@media (min-width: 1000px) {
+  .main-nav {
+    .navBar-menu {
+      .navBar-btn::before {
+        transform: translateY(-10px);
+      }
+      .navBar-btn::after {
+        transform: translateY(10px);
+      }
+    }
+  }
+}
+//  This makes the middle line dissapear
+.navBar-menu.openMenu .navBar-btn {
+  background: transparent;
+  box-shadow: none;
+}
+//  This rotates the top line and changes the color
+.navBar-menu.openMenu .navBar-btn::before {
+    width: 40px;
+    background-color: red;
+    transform: rotate(45deg);
+}
+//  This rrotates the bottom line and changes the color
+.navBar-menu.openMenu .navBar-btn::after {
+    width: 40px;
+    background-color: red;
+    transform: rotate(-45deg);
+
+}
+.main-nav.openNav {
+  left: 0;
 }
 
 @media (min-width: 1000px) {
-    .main-navbar {
-        min-width: 275px;
+  .main-nav {
+    min-width: 275px;
+    left: -300px;
+    .navBar-menu {
+      top: 30px;
+      left: 330px;
+      .navBar-btn {
+        width: 50px;
+        height: 6px;
+      }
+      .navBar-btn::before {
+        width: 45px;
+        height: 6px;
+      }
+      .navBar-btn::after {
+        width: 55px;
+        height: 6px;
+      }
     }
+  }
+  .navBar-menu.openMenu .navBar-btn::before {
+    width: 50px;
+  }
+  .navBar-menu.openMenu .navBar-btn::after {
+    width: 50px;
+  }
 }

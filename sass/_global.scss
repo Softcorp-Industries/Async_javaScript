@@ -44,6 +44,9 @@
     
   }
 *, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     line-height: 1.4;
     letter-spacing: .05rem;
 }
@@ -55,7 +58,6 @@ body.transition *:after {
 }
 body {
     background-color: var(--darkModeBg);
-    margin-left: 225px;
     font-size: 16px;
     color: var(--darkModeTxtClr);
 }
@@ -140,6 +142,6 @@ picture {
 @media (min-width: 1000px) {
     body {
         font-size: 20px;
-        margin-left: 285px;
+        
     }
 }
