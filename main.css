@@ -79,6 +79,9 @@
 }
 
 *, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   line-height: 1.4;
   letter-spacing: 0.05rem;
 }
@@ -92,7 +95,6 @@ body.transition *:after {
 
 body {
   background-color: var(--darkModeBg);
-  margin-left: 225px;
   font-size: 16px;
   color: var(--darkModeTxtClr);
 }
@@ -174,7 +176,6 @@ picture iframe {
 @media (min-width: 1000px) {
   body {
     font-size: 20px;
-    margin-left: 285px;
   }
 }
 .darkMode {
@@ -284,28 +285,18 @@ picture iframe {
 }
 
 #topBtn {
-  display: none;
-  /* Hidden by default */
-  position: fixed;
-  /* Fixed/sticky position */
-  bottom: 20px;
-  /* Place the button at the bottom of the page */
-  right: 30px;
-  /* Place the button 30px from the right */
-  z-index: 99;
-  /* Make sure it does not overlap */
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
   transform: rotateZ(-90deg);
-  border: none;
-  /* Remove borders */
-  outline: none;
-  /* Remove outline */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
   background-color: transparent;
-  padding: 15px;
-  /* Some padding */
-  border-radius: 10px;
-  /* Rounded corners */
-  cursor: pointer;
-  /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  cursor: pointer; /* Add a mouse pointer on hover */
 }
 #topBtn img {
   width: 25px;
@@ -355,6 +346,7 @@ picture iframe {
 }
 
 .note {
+  font-weight: 600;
   margin-bottom: -1rem;
 }
 
@@ -453,7 +445,7 @@ picture iframe {
   min-height: 100px;
   overflow: scroll;
   border-left: 5px solid dodgerblue;
-  background-color: #c9c9c9;
+  background-color: rgb(201, 201, 201);
   color: black;
 }
 
@@ -465,18 +457,18 @@ picture iframe {
   letter-spacing: 1px;
 }
 
-.main-navbar {
+.main-nav {
   position: fixed;
-  left: 0;
+  left: -250px;
   top: 0;
   min-width: 215px;
   height: 99vh;
-  overflow: auto;
   background-color: black;
   border: 1px solid black;
   font-family: "Roboto";
+  transition: all 0.5s ease-in-out;
 }
-.main-navbar h2 {
+.main-nav h2 {
   margin: 0;
   padding: 0.5rem 0;
   text-align: center;
@@ -484,19 +476,19 @@ picture iframe {
   background-color: dodgerblue;
   border-bottom: 1px solid black;
 }
-.main-navbar h2 span {
+.main-nav h2 span {
   color: var(--jsThemeClr);
 }
-.main-navbar ul {
+.main-nav .navBar {
   padding-left: 0;
 }
-.main-navbar ul li {
+.main-nav .navBar li {
   display: flex;
   align-items: center;
   border-bottom: 1px solid dodgerblue;
   margin-bottom: 0;
 }
-.main-navbar ul li a {
+.main-nav .navBar li a {
   padding: 0.75em 0.5em;
   color: white;
   display: block;
@@ -506,13 +498,104 @@ picture iframe {
   height: 100%;
   text-decoration: none;
 }
-.main-navbar ul li a:hover {
-  background-color: dodgerblue;
+.main-nav .navBar li a:hover {
+  background-color: rgb(30, 144, 255);
   color: var(--white);
+}
+.main-nav .navBar-menu {
+  position: absolute;
+  cursor: pointer;
+  top: 20px;
+  left: 260px;
+  height: 60px;
+  width: 60px;
+  z-index: 10;
+}
+.main-nav .navBar-menu .navBar-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 40px;
+  background-color: dodgerblue;
+  border-radius: 25%;
+}
+.main-nav .navBar-menu .navBar-btn::before,
+.main-nav .navBar-menu .navBar-btn::after {
+  content: "";
+  cursor: pointer;
+  position: absolute;
+  height: 4px;
+  background-color: dodgerblue;
+  border-radius: 25%;
+  transition: all 0.5s ease-in-out;
+}
+.main-nav .navBar-menu .navBar-btn::before {
+  width: 35px;
+  height: 5px;
+  transform: translateY(-8px);
+}
+.main-nav .navBar-menu .navBar-btn::after {
+  width: 45px;
+  height: 5px;
+  transform: translateY(8px);
 }
 
 @media (min-width: 1000px) {
-  .main-navbar {
+  .main-nav .navBar-menu .navBar-btn::before {
+    transform: translateY(-10px);
+  }
+  .main-nav .navBar-menu .navBar-btn::after {
+    transform: translateY(10px);
+  }
+}
+.navBar-menu.openMenu .navBar-btn {
+  background: transparent;
+  box-shadow: none;
+}
+
+.navBar-menu.openMenu .navBar-btn::before {
+  width: 40px;
+  background-color: red;
+  transform: rotate(45deg);
+}
+
+.navBar-menu.openMenu .navBar-btn::after {
+  width: 40px;
+  background-color: red;
+  transform: rotate(-45deg);
+}
+
+.main-nav.openNav {
+  left: 0;
+}
+
+@media (min-width: 1000px) {
+  .main-nav {
     min-width: 275px;
+    left: -300px;
+  }
+  .main-nav .navBar-menu {
+    top: 30px;
+    left: 330px;
+  }
+  .main-nav .navBar-menu .navBar-btn {
+    width: 50px;
+    height: 6px;
+  }
+  .main-nav .navBar-menu .navBar-btn::before {
+    width: 45px;
+    height: 6px;
+  }
+  .main-nav .navBar-menu .navBar-btn::after {
+    width: 55px;
+    height: 6px;
+  }
+  .navBar-menu.openMenu .navBar-btn::before {
+    width: 50px;
+  }
+  .navBar-menu.openMenu .navBar-btn::after {
+    width: 50px;
   }
 }
