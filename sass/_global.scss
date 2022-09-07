@@ -1,5 +1,5 @@
 :root {
-    // no change
+    
     --primaryBg: #e3e3e3;
     --secondaryClr: purple;
     --secondaryTxt: #C0FFF4;
@@ -8,8 +8,9 @@
   
     --jsThemeClr: yellow;
     --htmlThemeClr: orangered;
-    --cssThemeClr: blue;
+    --cssThemeClr: dodgerblue;
     --sassThemeClr: pink;
+    --linkClr: rgb(0, 255, 0);
     
     --themeTxtClr: rgb(255, 255, 0);
     --defaultThemeClr: rgb(54, 54, 54);
@@ -47,8 +48,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    line-height: 1.4;
-    letter-spacing: .05rem;
 }
 body.transition,
 body.transition *,
@@ -79,14 +78,9 @@ body[data-darkMode="darkMode"] {
     --themeSec: yellow;
     --themeBlk: black;
 }
-h1,
-h2,
-h3 {
-    color: dodgerblue;
-    text-shadow: 0px 0px 1px var(--black);
-}
+
 a {
-    color: black;
+    color: var(--linkClr);
 }
 ul {
     margin: 0;
