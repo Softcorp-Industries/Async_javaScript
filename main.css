@@ -1,13 +1,15 @@
 .main-header {
-  padding: 2rem 0;
-  text-align: center;
+  padding: 2em 0;
   color: dodgerblue;
+  text-align: center;
+  text-shadow: 0px 0px 1px var(--black);
 }
 .main-header h1 {
-  font-size: 1.75em;
-  letter-spacing: 0.25rem;
+  letter-spacing: 0.25em;
+  font-size: 1.5em;
 }
 .main-header h1 span {
+  letter-spacing: 0.25em;
   color: yellow;
 }
 
@@ -43,6 +45,16 @@
   transform: scale(1.2);
 }
 
+@media (min-width: 700px) {
+  .main-header h1 {
+    font-size: 2em;
+  }
+}
+@media (min-width: 1000px) {
+  .main-header h1 {
+    font-size: 2.25em;
+  }
+}
 :root {
   --primaryBg: #e3e3e3;
   --secondaryClr: purple;
@@ -50,8 +62,9 @@
   --bgGradient: linear-gradient(to left top, var(--secondaryTxt), var(--secondaryClr));
   --jsThemeClr: yellow;
   --htmlThemeClr: orangered;
-  --cssThemeClr: blue;
+  --cssThemeClr: dodgerblue;
   --sassThemeClr: pink;
+  --linkClr: rgb(0, 255, 0);
   --themeTxtClr: rgb(255, 255, 0);
   --defaultThemeClr: rgb(54, 54, 54);
   --themeBg: rgb(255, 255, 0);
@@ -82,8 +95,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  line-height: 1.4;
-  letter-spacing: 0.05rem;
 }
 
 body.transition,
@@ -118,15 +129,8 @@ body[data-darkMode=darkMode] {
   --themeBlk: black;
 }
 
-h1,
-h2,
-h3 {
-  color: dodgerblue;
-  text-shadow: 0px 0px 1px var(--black);
-}
-
 a {
-  color: black;
+  color: var(--linkClr);
 }
 
 ul {
@@ -332,15 +336,15 @@ picture iframe {
   display: none;
 }
 
-.chapter {
+.chapter, .welcome {
   margin: auto;
   padding-top: 1.5em;
   width: 85%;
 }
-.chapter h2 {
+.chapter h2, .welcome h2 {
   font-size: 1.75em;
 }
-.chapter h3 {
+.chapter h3, .welcome h3 {
   padding-top: 1.5em;
   font-size: 1.5em;
 }
@@ -469,8 +473,11 @@ picture iframe {
   transition: all 0.5s ease-in-out;
 }
 .main-nav h2 {
+  display: flex;
+  align-items: center;
   margin: 0;
-  padding: 0.5rem 0;
+  padding: 0.5em;
+  letter-spacing: 2px;
   text-align: center;
   color: var(--black);
   background-color: dodgerblue;
@@ -478,6 +485,9 @@ picture iframe {
 }
 .main-nav h2 span {
   color: var(--jsThemeClr);
+}
+.main-nav h2 img {
+  margin-left: auto;
 }
 .main-nav .navBar {
   padding-left: 0;
@@ -489,14 +499,19 @@ picture iframe {
   margin-bottom: 0;
 }
 .main-nav .navBar li a {
-  padding: 0.75em 0.5em;
+  padding: 0.5em;
   color: white;
-  display: block;
+  display: flex;
+  align-items: center;
   letter-spacing: 2px;
   font-weight: 600;
   width: 100%;
   height: 100%;
   text-decoration: none;
+}
+.main-nav .navBar li a img {
+  display: block;
+  margin-left: auto;
 }
 .main-nav .navBar li a:hover {
   background-color: rgb(30, 144, 255);
