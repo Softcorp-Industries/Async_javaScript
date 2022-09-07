@@ -459,7 +459,7 @@ picture iframe {
 
 .main-nav {
   position: fixed;
-  left: -250px;
+  left: -225px;
   top: 0;
   min-width: 215px;
   height: 99vh;
@@ -506,7 +506,7 @@ picture iframe {
   position: absolute;
   cursor: pointer;
   top: 20px;
-  left: 260px;
+  left: 240px;
   height: 60px;
   width: 60px;
   z-index: 10;
@@ -526,15 +526,14 @@ picture iframe {
   content: "";
   cursor: pointer;
   position: absolute;
-  height: 4px;
   background-color: dodgerblue;
   border-radius: 25%;
   transition: all 0.5s ease-in-out;
 }
 .main-nav .navBar-menu .navBar-btn::before {
   width: 35px;
-  height: 5px;
-  transform: translateY(-8px);
+  height: 3px;
+  transform: translateY(-7px);
 }
 .main-nav .navBar-menu .navBar-btn::after {
   width: 45px;
@@ -557,12 +556,14 @@ picture iframe {
 
 .navBar-menu.openMenu .navBar-btn::before {
   width: 40px;
+  height: 5px;
   background-color: red;
   transform: rotate(45deg);
 }
 
 .navBar-menu.openMenu .navBar-btn::after {
   width: 40px;
+  height: 5px;
   background-color: red;
   transform: rotate(-45deg);
 }
@@ -574,11 +575,11 @@ picture iframe {
 @media (min-width: 1000px) {
   .main-nav {
     min-width: 275px;
-    left: -300px;
+    left: -280px;
   }
   .main-nav .navBar-menu {
     top: 30px;
-    left: 330px;
+    left: 300px;
   }
   .main-nav .navBar-menu .navBar-btn {
     width: 50px;
@@ -586,16 +587,18 @@ picture iframe {
   }
   .main-nav .navBar-menu .navBar-btn::before {
     width: 45px;
-    height: 6px;
+    height: 5px;
   }
   .main-nav .navBar-menu .navBar-btn::after {
     width: 55px;
-    height: 6px;
+    height: 7px;
   }
   .navBar-menu.openMenu .navBar-btn::before {
     width: 50px;
+    height: 6px;
   }
   .navBar-menu.openMenu .navBar-btn::after {
     width: 50px;
+    height: 6px;
   }
 }

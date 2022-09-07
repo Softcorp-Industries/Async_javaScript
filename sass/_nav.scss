@@ -1,6 +1,6 @@
 .main-nav {
   position: fixed;
-  left: -250px;
+  left: -225px;
   top: 0;
   min-width: 215px;
   height: 99vh;
@@ -49,7 +49,7 @@
     position: absolute;
     cursor: pointer;
     top: 20px;
-    left: 260px;
+    left: 240px;
     height: 60px;
     width: 60px;
     z-index: 10;
@@ -70,7 +70,6 @@
       content: "";
       cursor: pointer;
       position: absolute;
-      height: 4px;
       background-color: dodgerblue;
       //box-shadow: 0px 0px 3px black;
       border-radius: 25%;
@@ -78,8 +77,8 @@
     }
     .navBar-btn::before {
       width: 35px;
-      height: 5px;
-      transform: translateY(-8px);
+      height: 3px;
+      transform: translateY(-7px);
     }
     .navBar-btn::after {
       width: 45px;
@@ -108,12 +107,14 @@
 //  This rotates the top line and changes the color
 .navBar-menu.openMenu .navBar-btn::before {
     width: 40px;
+    height: 5px;
     background-color: red;
     transform: rotate(45deg);
 }
 //  This rrotates the bottom line and changes the color
 .navBar-menu.openMenu .navBar-btn::after {
     width: 40px;
+    height: 5px;
     background-color: red;
     transform: rotate(-45deg);
 
@@ -125,28 +126,30 @@
 @media (min-width: 1000px) {
   .main-nav {
     min-width: 275px;
-    left: -300px;
+    left: -280px;
     .navBar-menu {
       top: 30px;
-      left: 330px;
+      left: 300px;
       .navBar-btn {
         width: 50px;
         height: 6px;
       }
       .navBar-btn::before {
         width: 45px;
-        height: 6px;
+        height: 5px;
       }
       .navBar-btn::after {
         width: 55px;
-        height: 6px;
+        height: 7px;
       }
     }
   }
   .navBar-menu.openMenu .navBar-btn::before {
     width: 50px;
+        height: 6px;
   }
   .navBar-menu.openMenu .navBar-btn::after {
     width: 50px;
+        height: 6px;
   }
 }
