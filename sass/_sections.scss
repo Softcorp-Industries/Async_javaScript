@@ -25,6 +25,32 @@
     max-width: 650px;
     text-align: center;
 }
+.reference {
+  margin: auto;
+  padding: 1em;
+  max-width: 900px;
+  letter-spacing: 1px;
+  line-height: 1.3;
+  border-radius: 1em;
+  legend {
+    padding: .5em;
+    a {
+      font-size: 1.5em;
+      span {
+        font-size: .5em;
+      }
+    }
+  }
+  ul {
+    margin: 1em;
+  }
+  a {
+    color: var(--linkClr);
+  }
+  p {
+    margin: .5em;
+  }
+}
 .bullets {
     display: flex;
     align-items: center;

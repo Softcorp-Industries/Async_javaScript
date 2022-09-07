@@ -64,7 +64,7 @@
   --htmlThemeClr: orangered;
   --cssThemeClr: dodgerblue;
   --sassThemeClr: pink;
-  --linkClr: rgb(0, 255, 0);
+  --linkClr: dodgerblue;
   --themeTxtClr: rgb(255, 255, 0);
   --defaultThemeClr: rgb(54, 54, 54);
   --themeBg: rgb(255, 255, 0);
@@ -364,6 +364,33 @@ picture iframe {
   width: 80%;
   max-width: 650px;
   text-align: center;
+}
+
+.reference {
+  margin: auto;
+  padding: 1em;
+  max-width: 900px;
+  letter-spacing: 1px;
+  line-height: 1.3;
+  border-radius: 1em;
+}
+.reference legend {
+  padding: 0.5em;
+}
+.reference legend a {
+  font-size: 1.5em;
+}
+.reference legend a span {
+  font-size: 0.5em;
+}
+.reference ul {
+  margin: 1em;
+}
+.reference a {
+  color: var(--linkClr);
+}
+.reference p {
+  margin: 0.5em;
 }
 
 .bullets {
